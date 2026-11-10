@@ -1,0 +1,257 @@
+%
+% Academic CV LaTeX Template
+% Original template: RuiWu1123/Rui_CV_Research
+% Template author: Dubasi Pavan Kumar
+%
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{academicons}
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+\usepackage{academicons} % 导入学术图标包
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+\definecolor{subtle}{RGB}{90,90,90}
+
+% Page layout
+\setlength{\multicolsep}{0pt}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\footskip}{5pt} % Addressing fancyhdr warning
+\usepackage{fontawesome5} % 支持 GitHub 图标
+% Hyperlink setup: standard blue URL text.
+\usepackage[colorlinks=true,urlcolor=darkblue]{hyperref}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+
+\definecolor{darkblue}{RGB}{0,70,140}
+\definecolor{starred}{RGB}{200,0,0} % 自定义红色星标字体
+\renewcommand{\rmdefault}{ppl} % Palatino everywhere, incl. \textnormal in Honors
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}}
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font options
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman (readable serif)
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like (similar to Trebuchet MS)
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica (another Arial/Calibri alternative)
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino (another elegant serif option)
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+    {\Huge\textbf{Jingtao Lei}}
+\end{center}
+\vspace{-4mm}
+
+\begin{center}
+    \small{
+    E-mail: \href{mailto:2617549@dundee.ac.uk}{2617549@dundee.ac.uk}
+    }
+\end{center}
+\begin{center}
+\vspace{0.7mm}
+    \small{
+    \socialicon{\faHome} \href{https://jingtaolei.github.io/}{Personal Page} |
+    \socialicon{\faGithub} \href{https://github.com/jingtaolei}{Github} |
+    \socialicon{\faGoogle}
+    \href{https://scholar.google.com/citations?user=9b8WczoAAAAJ\&hl=en}{Google Scholar}
+    }
+\end{center}
+
+\vspace{-7mm}
+
+\section{\textbf{Education}}
+\vspace{0.6mm}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Central South University, Dundee International Institute}{}
+{B.Sc. in Applied Mathematics; Dual-degree programme with the University of Dundee; Cumulative Average: 87.88/100}{Sep 2024 -- Present}
+\resumeSubHeadingListEnd
+\vspace{-5.5mm}
+
+\section{\textbf{Research Interests}}
+\vspace{1mm}
+\small{
+I work on \textbf{world action models}, focusing on how multimodal generative models represent physical states and predict how they evolve under actions. My interests span four questions:
+\begin{itemize}
+\item \textbf{Physical scene representations:} Encoding objects, metric distances, motion, and interactions in structured states.
+\item \textbf{Spatiotemporal reasoning:} Understanding how spatial relationships and physical dynamics evolve over time.
+\item \textbf{Action-conditioned prediction:} Learning state transitions and forecasting future states under different actions.
+\item \textbf{Long-horizon consistency:} Updating predictions with new observations to reduce accumulated prediction drift.
+\end{itemize}
+}
+\vspace{-4mm}
+
+\section{\textbf{Selected Publications} \hfill \textcolor{darkblue}{\scriptsize * = corresponding author}}
+\vspace{1mm}
+\small{
+\begin{enumerate}[leftmargin=*, labelsep=0.5em, align=left, widest={[\textbf{S.1}]}, itemindent=0em, label={\textbf{[\arabic*]}]}]
+
+\item[\textbf{[1]}] \underline{\textbf{Jingtao Lei}}\textsuperscript{*}, Hongji Li, Dexiang Shu. (2026). \textbf{Layer-Wise Gate-Controlled Prompt Truncation in a Multimodal Chest X-Ray Classifier}. \textit{arXiv preprint} [\href{https://arxiv.org/abs/2609.06590}{arXiv}] [\href{https://github.com/jingtaolei/mope-dynamic-prompt-truncation}{Code}] \\
+{\footnotesize\color{subtle}Introduces a layer-wise gating mechanism that adaptively truncates visual prompts for multimodal chest X-ray classification.}
+
+\end{enumerate}
+}
+
+\section{\textbf{Research Experience}}
+\vspace{0.3mm}
+\resumeSubHeadingListStart
+\resumeSubheading
+    {Extending Generative Models toward World Action Models}{}
+    {The Chinese University of Hong Kong | SURP | Supervisor: \href{https://chao1224.github.io/}{Prof. Shengchao Liu}}
+    {Jun 2026 -- Present}
+\resumeItemListStart
+    \item Built a controlled benchmark of 192 sequences covering single-object motion and two-object interactions to study how generative models represent direction, speed, optical flow, and object contact.
+    \item Linear probes decoded motion with 1.09$^\circ$ direction error and $R^2=0.988$ for speed; complementary 3D future-trajectory prediction experiments reduced mean position error from 2.81 to 1.48 (47\%) after LoRA adaptation.
+\resumeItemListEnd
+
+\resumeSubheading
+    {Adaptive Visual Prompting for Medical Image Classification}{}
+    {Carnegie Mellon University | Supervisor: \href{https://www.cs.cmu.edu/~dwoodruf/}{Prof. David P. Woodruff}}
+    {Jan 2026 -- Jul 2026}
+\resumeItemListStart
+    \item Developed a layer-wise gating controller for a ViT-based Mixture of Prompt Experts classifier, enabling adaptive visual-prompt truncation [1].
+    \item Reduced visual-prompt length from six tokens to one (83\% fewer tokens), achieving 0.8963 validation accuracy on the IU X-Ray classification task.
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{Technical Skills}}
+\vspace{1mm}
+\small{
+\textbf{Programming \& Scientific Computing:} Python, Bash, C++ (coursework), NumPy, pandas, Matplotlib\\
+\textbf{Machine Learning:} PyTorch, Vision Transformers, LoRA\\
+\textbf{Research Methods:} Controlled benchmark design, representation probing, OOD evaluation, 3D trajectory analysis\\
+\textbf{Systems \& Research Computing:} Linux, SSH, Git, Slurm, multi-GPU HPC computing\\
+\textbf{Independent Study:} UC Berkeley CS 61A; MIT 6.031: Software Construction
+}
+\vspace{-4mm}
+
+\section{\textbf{Honors and Awards}}
+\resumeSubHeadingListStart
+\resumePOR{\textnormal{First Prize, 21st CSU Mathematical Modeling Competition}}{ (National Selection)}{2026}
+\resumePOR{\textnormal{Second Prize, 6th Celian Cup Mathematical Modeling Elite League}}{ (Provincial-level Competition)}{2026}
+\resumePOR{\textnormal{Third Prize, Annual Comprehensive Student Evaluation Award}}{}{2024, 2026}
+\resumePOR{\textnormal{97.80/100 (A+), From Combinatorics to Calculus}}{ (Prof. Dan Ciubotaru, University of Oxford)}{2025}
+\resumePOR{\textnormal{AWS Academy Graduate -- Cloud Foundations}}{}{2025}
+\resumeSubHeadingListEnd
+\vspace{-4mm}
+
+\end{document}

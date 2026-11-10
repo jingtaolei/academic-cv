@@ -3,7 +3,7 @@
 LaTeX source and the latest PDF of my academic CV.
 
 - [View / download the CV](Jingtao_Lei_CV.pdf)
-- [LaTeX source](JingtaoLei_CV.tex)
+- [LaTeX source](Jingtao_Lei_CV.tex)
 - [Personal website](https://jingtaolei.github.io/)
 
 ## Compile
@@ -11,15 +11,15 @@ LaTeX source and the latest PDF of my academic CV.
 Use **pdfLaTeX** with a full TeX Live or MacTeX installation. From this directory:
 
 ```sh
-pdflatex -interaction=nonstopmode -halt-on-error -jobname=Jingtao_Lei_CV JingtaoLei_CV.tex
-pdflatex -interaction=nonstopmode -halt-on-error -jobname=Jingtao_Lei_CV JingtaoLei_CV.tex
+pdflatex -interaction=nonstopmode -halt-on-error Jingtao_Lei_CV.tex
+pdflatex -interaction=nonstopmode -halt-on-error Jingtao_Lei_CV.tex
 ```
 
 This produces `Jingtao_Lei_CV.pdf`. Required packages include `academicons`,
 `fontawesome5`, `cfr-lm`, `tcolorbox`, `geometry`, `titlesec`, and `hyperref`,
 along with the other packages listed in the source.
 
-For Overleaf, upload `JingtaoLei_CV.tex`, select it as the main document, and
+For Overleaf, upload `Jingtao_Lei_CV.tex`, select it as the main document, and
 choose pdfLaTeX as the compiler.
 
 The design uses A4 paper, 11 pt Palatino, and dark-blue hyperlinks
@@ -27,7 +27,7 @@ The design uses A4 paper, 11 pt Palatino, and dark-blue hyperlinks
 
 ## Update
 
-Edit `JingtaoLei_CV.tex`, recompile, and commit both the source and the updated
+Edit `Jingtao_Lei_CV.tex`, recompile, and commit both the source and the updated
 PDF. The checked-in PDF is the version approved on 10 November 2026.
 
 ## Template attribution

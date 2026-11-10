@@ -1,0 +1,18 @@
+# LaTeX build files (keep the final PDF tracked)
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# macOS metadata
+.DS_Store
+._*
